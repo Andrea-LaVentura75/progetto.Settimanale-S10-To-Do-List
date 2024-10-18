@@ -1,0 +1,71 @@
+<main class="bg-info-subtle animated">
+  <h1 class="text-center text-success pt-4">
+    Ricerca utente a cui hai assegnato la task
+  </h1>
+  <div class="container">
+    <div class="row p-3">
+      <div class="col-12">
+        <app-barra-di-ricerca></app-barra-di-ricerca>
+      </div>
+    </div>
+    <div class="row">
+      <h2 class="text-center text-success pt-4">
+        Clicca la checkbox per segnalare il completamento di una task
+      </h2>
+
+      <div
+        class="col-12 p-3 rounded-4 mt-5"
+        *ngFor="let utente of arrayHome"
+        [ngClass]="{
+          'border border-success color-div': utente.completed,
+          'border border-black color-div-red': !utente.completed
+        }"
+      >
+        <div>
+          <div class="d-flex align-items-center">
+            <input
+              class="form-check-input mt-0"
+              type="checkbox"
+              [(ngModel)]="utente.completed"
+              [ngClass]="{
+                'border border-success': utente.completed,
+                'border border-black': !utente.completed
+              }"
+            />
+            <h4
+              class="ms-2 border-bottom border-black"
+              [ngClass]="{
+                'text-success': utente.completed,
+                'text-black': !utente.completed
+              }"
+            >
+              {{ utente.todo }}
+            </h4>
+          </div>
+          <p
+            class="ms-4 mb-2"
+            [ngClass]="{
+              'text-success': utente.completed,
+              'text-black': !utente.completed
+            }"
+          >
+            Email:{{ utente.utenteArray?.email }}
+          </p>
+          <p
+            class="ms-4"
+            [ngClass]="{
+              'text-success': utente.completed,
+              'text-black': !utente.completed
+            }"
+          >
+            Assegnata a:
+            <span class="text-warning">
+              {{ utente.utenteArray?.firstName }}
+              {{ utente.utenteArray?.lastName }}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

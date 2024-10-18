@@ -1,0 +1,48 @@
+<form class="d-flex" (submit)="ricercaRisultati(); $event.preventDefault()">
+  <input
+    class="form-control me-2 bg-info-subtle border border-success"
+    type="search"
+    placeholder="Cerca per nome"
+    aria-label="Search"
+    [(ngModel)]="termineRicerca"
+    (ngModelChange)="ricercaRisultati()"
+    name="search"
+  />
+  <button class="btn btn-outline-success" type="submit">Cerca</button>
+</form>
+
+<div *ngIf="utentiFiltrati.length > 0">
+  <div *ngFor="let utente of utentiFiltrati">
+    <div class="user-info d-flex align-items-center mt-4">
+      <img [src]="utente.image" alt="Immagine Utente" class="user-image" />
+      <div class="ms-3">
+        <h3>{{ utente.firstName }} {{ utente.lastName }}</h3>
+        <p>Email: {{ utente.email }}</p>
+
+        <div
+          class="d-flex align-items-center"
+          *ngFor="let task of utente.tasks; let i = index"
+        >
+          <input
+            class="form-check-input mt-0"
+            type="checkbox"
+            [(ngModel)]="task.completed"
+            [ngClass]="{
+              'border border-success': task.completed,
+              'border border-black': !task.completed
+            }"
+          />
+          <h4
+            class="ms-2 border-bottom border-black"
+            [ngClass]="{
+              'text-success': task.completed,
+              'text-black': !task.completed
+            }"
+          >
+            {{ task.todo }}
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.color-div {
+  background-color: rgb(113 255 113 / 63%);
+}
+.form-check-input:checked {
+  background-color: #4caf50;
+  border-color: #04060a;
+}
+
+.color-div-red {
+  background-color: rgb(255 0 0 / 54%);
+}
+
+.animated {
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: fadeInFromTop 1s forwards;
+}
+
+@keyframes fadeInFromTop {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

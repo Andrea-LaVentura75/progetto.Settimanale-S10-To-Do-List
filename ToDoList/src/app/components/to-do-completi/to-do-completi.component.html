@@ -1,0 +1,38 @@
+<main class="bg-info-subtle">
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center text-success pt-4">
+        Tutte le task completate fino ad ora
+      </h1>
+      <div
+        class="col-12 p-3 rounded-4 mt-5 border border-success color-div"
+        *ngFor="let utente of arrayToDoCompleti"
+      >
+        <div *ngIf="utente.completed">
+          <div class="d-flex align-items-center">
+            <input
+              class="form-check-input mt-0 border border-success"
+              type="checkbox"
+              value=""
+              [checked]="utente.completed"
+              aria-label="Checkbox for following text input"
+            />
+            <h4 class="ms-2 text-success border-bottom border-black">
+              {{ utente.todo }}
+            </h4>
+          </div>
+          <p class="ms-4 mb-2 text-success">
+            Email: {{ utente.utenteArray?.email }}
+          </p>
+          <p class="ms-4 text-success">
+            Assegnata a:
+            <span class="text-warning">
+              {{ utente.utenteArray?.firstName }}
+              {{ utente.utenteArray?.lastName }}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

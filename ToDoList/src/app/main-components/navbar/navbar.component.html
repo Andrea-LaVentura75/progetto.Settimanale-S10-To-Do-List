@@ -1,0 +1,52 @@
+<nav
+  class="navbar navbar-expand-lg bg-info-subtle border-bottom-success custom-pills"
+>
+  <div class="container-fluid">
+    <img
+      class="img-width"
+      src="https://getdrawings.com/free-icon/todo-list-icon-70.png"
+      alt=""
+    />
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active text-success nav-link"
+            aria-current="page"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-success nav-link"
+            routerLink="/to-do-completi"
+            routerLinkActive="active"
+            >To Do Completi</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link text-success nav-link"
+            routerLink="/utenti"
+            routerLinkActive="active"
+            >Utenti</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
