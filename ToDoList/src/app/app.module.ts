@@ -11,6 +11,7 @@ import { ToDoCompletiComponent } from './components/to-do-completi/to-do-complet
 import { UtentiComponent } from './components/utenti/utenti.component';
 import { FormsModule } from '@angular/forms';
 import { BarraDiRicercaComponent } from './components/home/barra-di-ricerca/barra-di-ricerca.component';
+import { AnimazioneDirective } from './directives/animazione.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BarraDiRicercaComponent } from './components/home/barra-di-ricerca/barr
     ToDoCompletiComponent,
     UtentiComponent,
     BarraDiRicercaComponent,
+    AnimazioneDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],

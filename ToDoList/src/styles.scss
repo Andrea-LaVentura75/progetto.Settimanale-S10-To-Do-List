@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
+
+.animated {
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: fadeInFromTop 1s forwards;
+}
+
+@keyframes fadeInFromTop {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
